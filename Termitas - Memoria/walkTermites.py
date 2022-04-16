@@ -39,6 +39,7 @@ def walk(steps = 1000, interval = 1, termites = 10, chips = 10, maxLimit = 10):
         clist[pi].goto(chipList[pi].getPos())
 
     screen = t.getscreen()  # Obtiene la pantalla de turtle para hacer tracer
+    t.title("TERMITAS - SOLTAR CHIP / MEMORIA")
     screen.bgcolor("#00FFC1") # Make background color change
 
     # Simulations based on the steps passed through terminal

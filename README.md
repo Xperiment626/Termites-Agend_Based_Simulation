@@ -33,6 +33,21 @@
 
 ---
 
+# Ejecuciones de código
+
+## Termita - agente reactivo - Soltar y Apilar Chips
+
+<img src="imgs/Ejecucion%20-%20Apilar.png" alt="Ejecucion - Apilar" style="height: 650px; width:800px;">
+
+<br />
+
+## Termita - agente reactivo - Soltar y Apilar Chips con Memoria
+
+<img src="imgs/Ejecucion%20-%20Memoria.png" alt="Ejecucion - Apilar" style="height: 650px; width:800px;">
+
+<br />
+
+---
 # Contacto
 
 * E-mail Personal: `inaki.manosalvas@gmail.com`

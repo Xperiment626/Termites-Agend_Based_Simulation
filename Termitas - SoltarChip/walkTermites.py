@@ -39,14 +39,14 @@ def walk(steps = 1000, interval = 1, termites = 10, chips = 10, maxLimit = 10):
         clist[pi].goto(chipList[pi].getPos())
 
     screen = t.getscreen()  # Obtiene la pantalla de turtle para hacer tracer
-    screen.bgcolor("#00FFC1")
+    screen.bgcolor("#00FFC1") # Make background color change
 
-    # for i, tc in enumerate(tlist):
-    #    tc.goto(termList[i].getPos())
-
+    # Simulations based on the steps passed through terminal
     for ts in range(steps):
+        # Iterate every turtle element in 'tlist'
+        # i represent the index in the list
+        # tc represent the turtle object in canvas
         for i, tc in enumerate(tlist):
-            
             # postions of all chips in the canvas
             posChips = {c.getPos(): c.index for c in chipList}
 
@@ -54,28 +54,41 @@ def walk(steps = 1000, interval = 1, termites = 10, chips = 10, maxLimit = 10):
             posD = None
             auxPos = None
 
+            # Checking if the current Termite has a Chip loaded
             if termList[i].getLoad() == None:
-                
+                # pickChip method returns the current position of the Termite
                 posP = termList[i].pickChip(chipList, posChips)
-            
+            # The current Termite has no Chip loaded
             else:
-                
+                # Checking if in the current postion of the Termite is a Chip
                 if termList[i].getPos() in posChips:
-                    
+                    # Save the current position before move again
                     auxPos = termList[i].getPos()
+                    # Generate movement for the Termite
                     termList[i].move(r, limits, interval)
+                    # dropChip method return the current position of the Termite
                     posD = termList[i].dropChip(chipList, posChips, auxPos)
             
+            # Update Chips position in canvas
+            posChips = {c.getPos(): c.index for c in chipList}
+            
+            # Checking if the pickChip method return a position or None
             if posP is not None:
+                # Getting the current index of the Chip in our position
                 ind = posChips[posP]
+                # With the index get the position of the Chip we are currently working with. Then we update its position
                 clist[ind].goto(chipList[ind].getPos())
             
+            # Checking if the dropChip method return a position or None
             if posD != None:
-                ind = posChips[auxPos]
+                # Getting the current index of the Chip in the current position after moving forward or backwards
+                ind = posChips[posD]
+                # With the index get the position of the Chip we are currently working with. Then we update its position
                 clist[ind].goto(chipList[ind].getPos())
             
+            # Generate movement for the Termite
             termList[i].move(r, limits, interval)
-
+            # Update the last position of the Termite to the current
             tc.goto(termList[i].getPos())
 
         screen.tracer(10000000000)  # Se refrescara la pantalla cada 10 ejecuciones

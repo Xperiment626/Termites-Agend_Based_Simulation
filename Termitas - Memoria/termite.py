@@ -71,7 +71,6 @@ class Termite:
         # Checking if the previous(memory) position of the Termite is a blank space to deposit the Chip and checking if the Chip that we are on wasn't have been loaded to a Termite
         if self.getPrevPos() not in posChips and not Chips[posChips[auxPos]].getLoaded():
             # print("PREVIOUS POS")
-            
             # Changing the state of the Chip to downloaded from the Termite
             Chips[self.getLoad()].setLoaded(False)
             # Changing the current position of the Termite to the previous position
@@ -84,8 +83,7 @@ class Termite:
             return self.getPrevPos()
         else:
             # Checking if the current(next) position of the Termite is a blank space to deposit the Chip and checking if the Chip that we are on wasn't have been loaded to a Termite
-            
-            # Here self.getPos() is the next position of the Termite because the walkTermite.py file in line 68 I'm generating movement
+            # Here self.getPos() is the next position of the Termite because the walkTermite.py file in line 69 I'm generating movement
             if self.getPos() not in posChips and not Chips[posChips[auxPos]].getLoaded():
                 # print("NEXT POS")
                 

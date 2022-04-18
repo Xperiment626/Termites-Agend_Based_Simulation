@@ -9,12 +9,6 @@ class Termite:
     def getPos(self):
         return self.posicion
     
-    def getLastPos(self):
-        return self.last_postion
-    
-    def setLastPos(self, lastPos):
-        self.last_postion = lastPos
-    
     def setColor(self, color):
         self.color = color
 
@@ -65,10 +59,8 @@ class Termite:
             # Return the current position of the Termite
             return self.getPos()
 
-    def dropChip(self, Chips, posChips, auxPos):
-        # Checking if the previous(memory) position of the Termite is a blank space to deposit the Chip and checking if the Chip that we are on wasn't have been loaded to a Termite
-        
-        # Here self.getPos() is the next position of the Termite because the walkTermite.py file in line 68 I'm generating movement
+    def dropChip(self, Chips, posChips, auxPos):      
+        # Here self.getPos() is the next position of the Termite because the walkTermite.py file in line 69 I'm generating movement
         if self.getPos() not in posChips and not Chips[posChips[auxPos]].getLoaded():
             # Changing the state of the Chip to downloaded from the Termite
             Chips[self.getLoad()].setLoaded(False)

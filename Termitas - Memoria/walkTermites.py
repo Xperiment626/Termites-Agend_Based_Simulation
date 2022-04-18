@@ -55,11 +55,11 @@ def walk(steps = 1000, interval = 1, termites = 10, chips = 10, maxLimit = 10):
             posD = None
             auxPos = None
             
-            # Checking if the current Termite has a Chip loaded
+            # Checking if the current Termite has no Chip loaded
             if termList[i].getLoad() == None:
                 # pickChip method returns the current position of the Termite
                 posP = termList[i].pickChip(chipList, posChips)
-            # The current Termite has no Chip loaded
+            # The current Termite has a Chip loaded
             else:
                 # Checking if in the current postion of the Termite is a Chip
                 if termList[i].getPos() in posChips:

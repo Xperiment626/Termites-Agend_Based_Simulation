@@ -48,6 +48,26 @@
 <br />
 
 ---
+
+# Como Ejecutar los programas
+
+## Primero, debe descargar el código en .zip o clonarlo donde prefiera.
+## Segundo, una vez tenga los archivos listos, notará que tiene dos carpetas en su directorio.
+> ./Termitas - SoltarChip
+> 
+> ./Termitas - Memoria
+
+## Para hacer uso de los programas tendrá que entrar al subdirectorio que le intere probar. Una vez ahí, abra una terminal/consola y ejecute el siguiente comando en su terminal/consola:
+
+    $ python walkTermites.py 5000 1 10 25 10
+
+## Si no le funcionó pruebe con el siguiente comando:
+
+    $ python3 walkTermites.py 5000 1 10 25 10
+
+## Por último presione la tecla enter y verá el código en ejecución en una ventana gráfica.
+---
+
 # Contacto
 
 * E-mail Personal: `inaki.manosalvas@gmail.com`
